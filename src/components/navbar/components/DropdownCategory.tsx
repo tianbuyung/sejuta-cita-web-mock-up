@@ -1,15 +1,14 @@
+import useCategory from "hooks/category/useCategory";
 import { NavDropdown } from "react-bootstrap";
 
-interface DropdownProps {
-	category: any;
-}
+const DropdownCategory = () => {
+	const { category } = useCategory();
 
-const DropdownCategory = ({ category }: DropdownProps) => {
 	return (
 		<div>
 			{category?.map((item: any) => {
 				return (
-					<NavDropdown.Item href="#" key={item.id}>
+					<NavDropdown.Item href={`/category/${item?.id}`} key={item.id}>
 						{item.name}
 					</NavDropdown.Item>
 				);

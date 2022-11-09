@@ -9,6 +9,7 @@ interface FetchProps {
 class BaseService {
 	async fetch({ path, options }: FetchProps) {
 		const url = byPassCors + API + path;
+
 		options.headers = {
 			"Content-Type": "application/json",
 			origin: "x-requested-with",

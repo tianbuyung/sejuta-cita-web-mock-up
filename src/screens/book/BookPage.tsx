@@ -1,12 +1,15 @@
-interface BookPageProps {
-	books: any;
-}
+import { useParams } from "react-router-dom";
+import useBookPage from "screens/book/useBookPage";
 
-const BookPage = ({ books }: BookPageProps) => {
+const BookPage = () => {
+	const { categoryId } = useParams();
+	const query = `categoryId=${categoryId}&page=0&size=10`;
+	const { getBooks } = useBookPage({ query });
+
 	return (
 		<div>
 			<ul>
-				{books?.map((item: any) => {
+				{getBooks?.map((item: any) => {
 					return (
 						<li key={item.id}>
 							Title:{item.title}
