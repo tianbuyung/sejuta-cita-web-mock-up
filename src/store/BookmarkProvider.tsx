@@ -8,7 +8,17 @@ const defaultBookmarkState = {
 
 const bookmarkReducer = (state: any, action: any) => {
 	if (action.type === "ADD") {
-		const updatedItems = state.items.concat(action.item);
+		const existingBookmarkItemIndex = state.items.findIndex(
+			(item: any) => item.id === action.item.id
+		);
+
+		let updatedItems;
+
+		if (existingBookmarkItemIndex >= 0) {
+			updatedItems = state.items;
+		} else {
+			updatedItems = state.items.concat(action.item);
+		}
 
 		return {
 			items: updatedItems,

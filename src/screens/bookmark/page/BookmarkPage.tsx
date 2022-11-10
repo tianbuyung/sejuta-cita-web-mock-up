@@ -12,13 +12,18 @@ const BookmarkPage = ({ onClose }: any) => {
 		bookmarkCtx.removeItem(id);
 	};
 
+	const bookmarkItemClearHandler = () => {
+		bookmarkCtx.clearBookmark();
+	};
+
 	const bookmarkItems = (
 		<ul className={classes["bookmark-items"]}>
 			{bookmarkCtx.items.map((item: any) => (
 				<BookmarkItem
-					key={item.item.id}
-					title={item.item.title}
-					onRemove={bookmarkItemRemoveHandler.bind(null, item.item.id)}
+					key={item.id}
+					title={item.title}
+					authors={item.authors}
+					onRemove={bookmarkItemRemoveHandler.bind(null, item.id)}
 				/>
 			))}
 		</ul>
@@ -30,6 +35,12 @@ const BookmarkPage = ({ onClose }: any) => {
 			<div className={classes.actions}>
 				<button className={classes["button--alt"]} onClick={onClose}>
 					Close
+				</button>
+				<button
+					className={classes["button"]}
+					onClick={bookmarkItemClearHandler}
+				>
+					Clear
 				</button>
 			</div>
 		</Modal>

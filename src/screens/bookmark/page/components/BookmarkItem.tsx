@@ -6,7 +6,7 @@ const BookmarkItem = (props: any) => {
 			<div>
 				<h2>{props.title}</h2>
 				<div className={classes.summary}>
-					<span className={classes.authors}>{props.authors}</span>
+					<span className={classes.authors}>Authors: {props.authors}</span>
 				</div>
 			</div>
 			<div className={classes.actions}>

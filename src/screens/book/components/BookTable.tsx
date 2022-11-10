@@ -8,7 +8,9 @@ const BookTable = ({ books }: BookTableProps) => {
 
 	const addToBookmarkHandler = (item: any) => {
 		bookmarkCtx.addItem({
-			item,
+			id: item.id,
+			title: item.title,
+			authors: item.authors,
 		});
 	};
 
