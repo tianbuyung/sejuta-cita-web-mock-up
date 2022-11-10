@@ -17,8 +17,7 @@ const useBookPage = () => {
 			try {
 				const queryTotalPages = `categoryId=${categoryId}&page=0&size=1000`;
 				const dataTotalPages = await bookService.getAllBooks(queryTotalPages);
-				console.log(dataTotalPages.length);
-				setTotalPages(Math.ceil(dataTotalPages.length / size));
+				setTotalPages(Math.floor(dataTotalPages.length / size));
 				const query = `categoryId=${categoryId}&page=${page}&size=${size}`;
 				const data = await bookService.getAllBooks(query);
 				setGetBooks(data);
