@@ -1,6 +1,34 @@
-# Getting Started with Create React App
+# Sejuta Cita Web Mock Up
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Installation
+
+1. This app requires [Node.js v16+](https://nodejs.org/en/) to run.
+
+2. Clone this repository.
+
+   ```sh
+   git clone https://github.com/tianbuyung/sejuta-cita-web-mock-up
+   ```
+
+3. Mount the directory using terminal.
+
+   ```sh
+   cd sejuta-cita-web-mock-up
+   ```
+
+4. Install dependencies via terminal
+
+   ```sh
+   npm install
+   ```
+
+5. Create `.env` in your local directory to solved CORS issue, ex. see (see [.env.example](/.env.example)) in this repository.
+
+6. You can run script follow this [instructions](#available-scripts)
 
 ## Available Scripts
 
@@ -44,3 +72,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Authors
+
+Septian Maulana
+
+## License
+
+[MIT](/LICENSE.md) License
