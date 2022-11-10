@@ -5,10 +5,12 @@ import NavbarComponent from "components/navbar/NavbarComponent";
 import useBookPage from "screens/book/useBookPage";
 import SearchComponent from "screens/book/components/SearchComponent";
 import BookTable from "screens/book/components/BookTable";
+import BookmarkPage from "screens/bookmark/page/BookmarkPage";
 
 const BookPage = () => {
 	const { getBooks, setPage, totalPages } = useBookPage();
 	const [query, setQuery] = useState("");
+	const [bookmarkIsShown, setBookmarkIsShown] = useState(false);
 	const keys = ["title", "authors"];
 
 	const Search = (getBooks: any) => {
@@ -17,9 +19,18 @@ const BookPage = () => {
 		);
 	};
 
+	const showBookmarkHandler = () => {
+		setBookmarkIsShown(true);
+	};
+
+	const hideBookmarkHandler = () => {
+		setBookmarkIsShown(false);
+	};
+
 	return (
 		<>
-			<NavbarComponent />
+			{bookmarkIsShown && <BookmarkPage onClose={hideBookmarkHandler} />}
+			<NavbarComponent onShowBookmark={showBookmarkHandler} />
 			<SearchComponent onSetQuery={setQuery} />
 			<BookTable books={Search(getBooks)} />
 			<ReactPaginate

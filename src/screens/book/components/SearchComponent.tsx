@@ -14,7 +14,9 @@ const SearchComponent = ({ onSetQuery }: SearchComponentProps) => {
 					aria-label="Search"
 					onChange={searchChangeHandler}
 				/>
-				<Button variant="outline-success">Search</Button>
+				<Button variant="outline-success" className="d-flex">
+					<i className="bi bi-search" /> Search
+				</Button>
 			</Form>
 		</Container>
 	);

@@ -1,8 +1,19 @@
+import { useContext } from "react";
+
 import { Button, Card, Col, Row } from "react-bootstrap";
+import BookmarkContext from "store/bookmark-context";
 
 const BookTable = ({ books }: BookTableProps) => {
+	const bookmarkCtx = useContext(BookmarkContext);
+
+	const addToBookmarkHandler = (item: any) => {
+		bookmarkCtx.addItem({
+			item,
+		});
+	};
+
 	return (
-		<Row xs={1} sm={2} md={3} lg={4} xl={5} className="g-4 m-5">
+		<Row xs={1} sm={2} lg={3} xl={5} className="g-4 m-5">
 			{books?.slice(0, 10).map((item: any) => {
 				return (
 					<Col key={item?.id}>
@@ -19,7 +30,15 @@ const BookTable = ({ books }: BookTableProps) => {
 								<Card.Text style={{ height: "50px" }}>
 									Authors:{item?.authors}
 								</Card.Text>
-								<Button variant="success">Details</Button>
+								<Card.Link href="#">Details</Card.Link>
+								<br />
+								<Button
+									variant="success"
+									className="mt-3"
+									onClick={() => addToBookmarkHandler(item)}
+								>
+									<i className="bi bi-bookmark-plus" /> Bookmark
+								</Button>
 							</Card.Body>
 						</Card>
 					</Col>

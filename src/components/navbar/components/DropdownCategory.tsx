@@ -1,5 +1,6 @@
 import useCategory from "hooks/category/useCategory";
 import { NavDropdown } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 
 const DropdownCategory = () => {
 	const { category } = useCategory();
@@ -8,9 +9,9 @@ const DropdownCategory = () => {
 		<div>
 			{category?.map((item: any) => {
 				return (
-					<NavDropdown.Item href={`/category/${item?.id}`} key={item.id}>
-						{item.name}
-					</NavDropdown.Item>
+					<LinkContainer key={item.id} to={`/category/${item?.id}`}>
+						<NavDropdown.Item>{item.name}</NavDropdown.Item>
+					</LinkContainer>
 				);
 			})}
 		</div>

@@ -6,10 +6,7 @@ const Body = () => {
 			className={`${classes["heading_container"]} ${classes["heading_center"]}`}
 		>
 			<h2>Welcome to Sejuta Cita</h2>
-			<p>
-				There are many variations of passages of Lorem Ipsum available, but the
-				majority have suffered alteration
-			</p>
+			<p>Please select the "Book Category" menu to start reading!</p>
 		</div>
 	);
 };
