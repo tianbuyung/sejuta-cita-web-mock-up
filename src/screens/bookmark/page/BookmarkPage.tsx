@@ -5,7 +5,7 @@ import classes from "./BookmarkPage.module.css";
 import BookmarkContext from "store/bookmark-context";
 import BookmarkItem from "screens/bookmark/page/components/BookmarkItem";
 
-const BookmarkPage = ({ onClose }: any) => {
+const BookmarkPage = ({ onClose }: BookmarkPageProps) => {
 	const bookmarkCtx = useContext(BookmarkContext);
 
 	const bookmarkItemRemoveHandler = (id: number) => {
@@ -46,5 +46,9 @@ const BookmarkPage = ({ onClose }: any) => {
 		</Modal>
 	);
 };
+
+interface BookmarkPageProps {
+	onClose: () => void;
+}
 
 export default BookmarkPage;

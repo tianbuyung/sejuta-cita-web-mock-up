@@ -7,9 +7,9 @@ const bookService = new BookService();
 const size = 10;
 
 const useBookPage = () => {
-	const [getBooks, setGetBooks] = useState([]);
-	const [page, setPage] = useState(0);
-	const [totalPages, setTotalPages] = useState(0);
+	const [getBooks, setGetBooks] = useState<Array<any>>([]);
+	const [page, setPage] = useState<number>(0);
+	const [totalPages, setTotalPages] = useState<number>(0);
 	const { categoryId } = useParams();
 
 	useEffect(() => {

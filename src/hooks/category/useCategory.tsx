@@ -4,7 +4,7 @@ import CategoryService from "services/CategoryService";
 const categoryService = new CategoryService();
 
 const useCategory = () => {
-	const [getCategory, setGetCategory] = useState([]);
+	const [getCategory, setGetCategory] = useState<Array<any>>([]);
 
 	useEffect(() => {
 		const fetchGetCategoryHandler = async () => {

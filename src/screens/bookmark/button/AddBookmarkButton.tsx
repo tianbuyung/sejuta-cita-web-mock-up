@@ -2,7 +2,7 @@ import { useContext } from "react";
 import BookmarkContext from "store/bookmark-context";
 import classes from "./AddBookmarkButton.module.css";
 
-const AddBookmarkButton = ({ onClick }: any) => {
+const AddBookmarkButton = ({ onClick }: AddBookmarkButtonProps) => {
 	const bookmarkCtx = useContext(BookmarkContext);
 
 	const { items } = bookmarkCtx;
@@ -19,5 +19,9 @@ const AddBookmarkButton = ({ onClick }: any) => {
 		</button>
 	);
 };
+
+interface AddBookmarkButtonProps {
+	onClick: () => void;
+}
 
 export default AddBookmarkButton;
